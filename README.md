@@ -197,12 +197,18 @@ MIT
 
 <br>
 
-<a href="https://github.com/DeadManOfficial">
-  <img src="https://img.shields.io/badge/Built_by-DeadMan-100000?style=flat&logo=github" alt="DeadMan" />
+<a href="https://twitter.com/DeadManAI">
+  <img src="https://img.shields.io/badge/X-000000?style=flat&logo=x&logoColor=white" alt="X" />
+</a>
+<a href="https://youtube.com/@DeadManAI">
+  <img src="https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white" alt="YouTube" />
+</a>
+<a href="https://tiktok.com/@DeadManAI">
+  <img src="https://img.shields.io/badge/TikTok-000000?style=flat&logo=tiktok&logoColor=white" alt="TikTok" />
 </a>
 
 <br><br>
 
-<sub>BUILD > BUY</sub>
+<sub>**BUILD > BUY**</sub>
 
 </div>
