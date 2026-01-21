@@ -48,6 +48,10 @@ Add to Claude config:
 <details>
 <summary>Config locations</summary>
 
+**Claude Code (CLI):**
+- **All platforms:** `~/.claude/settings.json`
+
+**Claude Desktop:**
 - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Linux:** `~/.config/Claude/claude_desktop_config.json`
