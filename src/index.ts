@@ -12,6 +12,9 @@ import {
   Tool,
 } from '@modelcontextprotocol/sdk/types.js';
 
+// Import audit logger
+import { withAuditLogging } from './utils/audit-logger.js';
+
 // Import all handlers
 import {
   // Audit Engine
@@ -653,32 +656,34 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
   return { tools: TOOLS };
 });
 
-// Handle tool calls
+// Handle tool calls with audit logging
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
   const toolArgs = args || {};
 
-  try {
-    const handler = TOOL_HANDLERS[name];
-    if (handler) {
-      return handler(toolArgs);
+  return withAuditLogging(name, async () => {
+    try {
+      const handler = TOOL_HANDLERS[name];
+      if (handler) {
+        return handler(toolArgs);
+      }
+      return {
+        content: [{
+          type: 'text',
+          text: `Unknown tool: ${name}`
+        }],
+        isError: true
+      };
+    } catch (error) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Error executing ${name}: ${error instanceof Error ? error.message : String(error)}`
+        }],
+        isError: true
+      };
     }
-    return {
-      content: [{
-        type: 'text',
-        text: `Unknown tool: ${name}`
-      }],
-      isError: true
-    };
-  } catch (error) {
-    return {
-      content: [{
-        type: 'text',
-        text: `Error executing ${name}: ${error instanceof Error ? error.message : String(error)}`
-      }],
-      isError: true
-    };
-  }
+  });
 });
 
 // Start the server
