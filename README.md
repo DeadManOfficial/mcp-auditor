@@ -127,7 +127,7 @@
 #### Option 1: NPM (Recommended)
 
 ```bash
-npm install -g mcp-auditor
+npm install -g @officialdeadman/mcp-auditor
 ```
 
 #### Option 2: From Source
@@ -151,7 +151,7 @@ Add to your Claude Desktop configuration:
   "mcpServers": {
     "mcp-auditor": {
       "command": "npx",
-      "args": ["-y", "mcp-auditor"]
+      "args": ["-y", "@officialdeadman/mcp-auditor"]
     }
   }
 }
@@ -167,7 +167,7 @@ Add to your Claude Desktop configuration:
   "mcpServers": {
     "mcp-auditor": {
       "command": "npx",
-      "args": ["-y", "mcp-auditor"]
+      "args": ["-y", "@officialdeadman/mcp-auditor"]
     }
   }
 }
@@ -183,7 +183,7 @@ Add to your Claude Desktop configuration:
   "mcpServers": {
     "mcp-auditor": {
       "command": "npx",
-      "args": ["-y", "mcp-auditor"]
+      "args": ["-y", "@officialdeadman/mcp-auditor"]
     }
   }
 }

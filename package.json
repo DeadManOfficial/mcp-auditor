@@ -1,5 +1,5 @@
 {
-  "name": "mcp-auditor",
+  "name": "@officialdeadman/mcp-auditor",
   "version": "1.0.0",
   "description": "The Omniscient Auditor - Forensic-grade security, compliance, and code auditing for Claude Desktop via MCP. 35 professional tools across 8 audit domains.",
   "type": "module",
