@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mcp-auditor": {
+      "command": "node",
+      "args": ["G:/Projects/mcp-auditor/dist/index.js"],
+      "env": {}
+    }
+  }
+}

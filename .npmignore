@@ -1,0 +1,20 @@
+# Source files (dist is published)
+src/
+tsconfig.json
+
+# Development files
+self-audit.ts
+.gitignore
+.github/
+
+# Documentation (README is included)
+CONTRIBUTING.md
+CHANGELOG.md
+
+# IDE
+.vscode/
+.idea/
+
+# Tests
+coverage/
+*.test.ts
