@@ -1,150 +1,38 @@
 <div align="center">
 
-# 🔍 MCP Auditor
+<br>
 
-### *The Omniscient Auditor* — Forensic-Grade Security & Compliance Analysis
+# MCP Auditor
 
-[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-00D4AA?style=for-the-badge&logo=anthropic&logoColor=white)](https://modelcontextprotocol.io)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+**Forensic-Grade Security & Compliance Analysis for Claude**
 
-<br />
+35 tools · 8 domains · Zero external API dependencies
 
-**35 Professional Auditing Tools** | **8 Audit Domains** | **Zero Dependencies on External APIs**
+<br>
 
-[Getting Started](#-quick-start) • [Tools Reference](#-tools-reference) • [Examples](#-examples) • [Contributing](#-contributing)
+<a href="https://www.npmjs.com/package/@officialdeadman/mcp-auditor">
+  <img src="https://img.shields.io/badge/npm-@officialdeadman/mcp--auditor-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm" />
+</a>
+<a href="https://github.com/DeadManOfficial/mcp-auditor">
+  <img src="https://img.shields.io/badge/GitHub-Source-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+</a>
+<a href="https://modelcontextprotocol.io">
+  <img src="https://img.shields.io/badge/MCP-Compatible-00D4AA?style=for-the-badge" alt="MCP" />
+</a>
 
-<br />
-
-<img src="https://raw.githubusercontent.com/anthropics/anthropic-cookbook/main/misc/mcp-logo.png" alt="MCP Logo" width="120" />
+<br><br>
 
 </div>
 
 ---
 
-## 🌟 What is MCP Auditor?
-
-**MCP Auditor** is a comprehensive Model Context Protocol (MCP) server that brings **enterprise-grade auditing capabilities** directly into Claude. It transforms Claude into a forensic auditor, security analyst, compliance officer, and code reviewer — all in one.
-
-> *"Like having an entire audit team available 24/7, powered by AI."*
-
-### Why MCP Auditor?
-
-| Traditional Auditing | With MCP Auditor |
-|---------------------|------------------|
-| Manual checklist reviews | Automated framework assessments |
-| Expensive external consultants | Instant, on-demand analysis |
-| Siloed audit domains | Unified cross-domain auditing |
-| Static reports | Interactive, contextual findings |
-| Weeks of preparation | Real-time insights |
-
----
-
-## ✨ Features
-
-<table>
-<tr>
-<td width="50%">
-
-### 🛡️ Security Auditing
-- **OWASP Top 10** vulnerability assessment
-- **MITRE ATT&CK** threat modeling
-- **Zero Trust** architecture evaluation
-- **Cloud Security** (AWS, Azure, GCP)
-- Real-time vulnerability detection
-
-</td>
-<td width="50%">
-
-### 📋 Compliance Frameworks
-- **SOC 2** Type I & II
-- **HIPAA** / **HITECH**
-- **PCI-DSS v4.0**
-- **GDPR** / **CCPA**
-- **ISO 27001** / **NIST CSF**
-- **FedRAMP** / **CMMC**
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🔬 Forensic Analysis
-- **Benford's Law** statistical analysis
-- **Fraud risk** indicators (8 schemes)
-- **AML** transaction monitoring
-- **Interview guide** generation (PEACE/FAINT)
-- Chain of custody evidence tracking
-
-</td>
-<td width="50%">
-
-### 💻 Code Quality
-- **50+ vulnerability patterns**
-- **SQL injection**, **XSS**, **Command injection**
-- **Hardcoded secrets** detection
-- **Code smell** identification
-- **Dependency** analysis
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### ⚙️ Operational Excellence
-- **TIMWOOD** waste assessment
-- **DMAIC** improvement planning
-- **Value Stream** mapping
-- **11 efficiency metrics** (OEE, PCE, Takt)
-- Process optimization
-
-</td>
-<td width="50%">
-
-### 🤖 AI/ML Governance
-- **14 AI risk categories**
-- **Fairness metrics** (5 standard measures)
-- **Model Card** generation
-- Bias detection guidance
-- Explainability assessment
-
-</td>
-</tr>
-</table>
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- **Node.js** 18+ ([Download](https://nodejs.org/))
-- **Claude Desktop** ([Download](https://claude.ai/download))
-
-### Installation
-
-#### Option 1: NPM (Recommended)
+## Install
 
 ```bash
 npm install -g @officialdeadman/mcp-auditor
 ```
 
-#### Option 2: From Source
-
-```bash
-git clone https://github.com/anthropics/mcp-auditor.git
-cd mcp-auditor
-npm install
-npm run build
-```
-
-### Configure Claude Desktop
-
-Add to your Claude Desktop configuration:
-
-<details>
-<summary><b>📍 Windows</b> — <code>%APPDATA%\Claude\claude_desktop_config.json</code></summary>
+Add to Claude config:
 
 ```json
 {
@@ -157,287 +45,164 @@ Add to your Claude Desktop configuration:
 }
 ```
 
-</details>
-
 <details>
-<summary><b>📍 macOS</b> — <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></summary>
+<summary>Config locations</summary>
 
-```json
-{
-  "mcpServers": {
-    "mcp-auditor": {
-      "command": "npx",
-      "args": ["-y", "@officialdeadman/mcp-auditor"]
-    }
-  }
-}
-```
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Linux:** `~/.config/Claude/claude_desktop_config.json`
 
 </details>
-
-<details>
-<summary><b>📍 Linux</b> — <code>~/.config/Claude/claude_desktop_config.json</code></summary>
-
-```json
-{
-  "mcpServers": {
-    "mcp-auditor": {
-      "command": "npx",
-      "args": ["-y", "@officialdeadman/mcp-auditor"]
-    }
-  }
-}
-```
-
-</details>
-
-### Verify Installation
-
-1. **Restart Claude Desktop** completely
-2. Look for the **🔨 hammer icon** in the chat input
-3. You should see **35 tools** from `mcp-auditor`
 
 ---
 
-## 🛠️ Tools Reference
+## Tools
 
-### 🎯 Audit Engine (4 tools)
-
-| Tool | Description |
-|------|-------------|
-| `start_audit` | Initialize audit engagement with scope & objectives |
-| `add_finding` | Record findings with severity, evidence, recommendations |
-| `collect_evidence` | Collect & hash evidence for chain of custody |
-| `generate_report` | Generate comprehensive audit reports (JSON/Markdown) |
-
-### 🚨 Red Flag Detection (1 tool)
+### Audit Engine
 
 | Tool | Description |
 |------|-------------|
-| `scan_red_flags` | Scan for 100+ forensic red flags across 10 categories |
+| `start_audit` | Initialize audit with scope & objectives |
+| `add_finding` | Record findings with severity & evidence |
+| `collect_evidence` | Hash evidence for chain of custody |
+| `generate_report` | Generate reports (JSON/Markdown) |
 
-**Categories:** Journal Entries, Expenses, Vendor Payments, Communication, Timing, Revenue, Assets, Code Security, Compliance, Behavioral
-
-### 💻 Code Audit (3 tools)
-
-| Tool | Description |
-|------|-------------|
-| `audit_code` | Comprehensive security & quality audit |
-| `calculate_code_metrics` | LOC, complexity, function counts |
-| `analyze_dependencies` | Package vulnerability analysis |
-
-### 🛡️ Security Audit (4 tools)
+### Security
 
 | Tool | Description |
 |------|-------------|
-| `assess_owasp` | OWASP Top 10 (2021) assessment |
-| `assess_cloud_security` | AWS/Azure/GCP security evaluation |
+| `assess_owasp` | OWASP Top 10 assessment |
+| `assess_cloud_security` | AWS / Azure / GCP evaluation |
 | `assess_zero_trust` | Zero Trust architecture review |
-| `get_mitre_techniques` | MITRE ATT&CK technique lookup |
+| `get_mitre_techniques` | MITRE ATT&CK lookup |
 
-### 🔬 Forensic Audit (4 tools)
-
-| Tool | Description |
-|------|-------------|
-| `analyze_benford` | Benford's Law statistical analysis |
-| `assess_fraud_risk` | Fraud scheme indicator assessment |
-| `assess_aml_risk` | Anti-money laundering risk evaluation |
-| `generate_interview_guide` | PEACE/FAINT methodology guides |
-
-### 📋 Compliance Audit (3 tools)
+### Compliance
 
 | Tool | Description |
 |------|-------------|
-| `generate_compliance_checklist` | Framework-specific checklists |
+| `generate_compliance_checklist` | SOC 2, HIPAA, PCI-DSS, GDPR, ISO 27001 |
 | `assess_compliance` | Gap analysis & recommendations |
-| `map_compliance_controls` | Cross-framework control mapping |
+| `map_compliance_controls` | Cross-framework mapping |
 
-### ⚙️ Operational Audit (4 tools)
-
-| Tool | Description |
-|------|-------------|
-| `assess_waste` | TIMWOOD waste identification |
-| `generate_dmaic_plan` | Six Sigma improvement planning |
-| `analyze_value_stream` | Process cycle efficiency analysis |
-| `get_efficiency_metrics` | Operational metric definitions |
-
-### 🖥️ IT Systems Audit (4 tools)
+### Forensic
 
 | Tool | Description |
 |------|-------------|
-| `assess_cobit` | COBIT 5 governance assessment |
+| `analyze_benford` | Benford's Law analysis |
+| `assess_fraud_risk` | Fraud scheme indicators |
+| `assess_aml_risk` | Anti-money laundering evaluation |
+| `generate_interview_guide` | PEACE/FAINT methodology |
+
+### Code
+
+| Tool | Description |
+|------|-------------|
+| `audit_code` | Security & quality audit |
+| `calculate_code_metrics` | LOC, complexity, functions |
+| `analyze_dependencies` | Package vulnerabilities |
+| `scan_red_flags` | 100+ forensic red flags |
+
+### Operational
+
+| Tool | Description |
+|------|-------------|
+| `assess_waste` | TIMWOOD identification |
+| `generate_dmaic_plan` | Six Sigma planning |
+| `analyze_value_stream` | Process efficiency |
+| `get_efficiency_metrics` | OEE, PCE, Takt definitions |
+
+### IT Systems
+
+| Tool | Description |
+|------|-------------|
+| `assess_cobit` | COBIT 5 governance |
 | `assess_change_management` | Change control evaluation |
 | `assess_backup_recovery` | DR/BCP assessment |
-| `assess_ad_security` | Active Directory security review |
+| `assess_ad_security` | Active Directory review |
 
-### 🤖 AI/ML Audit (3 tools)
-
-| Tool | Description |
-|------|-------------|
-| `assess_ai_risks` | 14-category AI risk assessment |
-| `assess_fairness` | Fairness metric evaluation |
-| `generate_model_card` | Model documentation template |
-
-### 🌐 Multi-Domain (2 tools)
+### AI/ML
 
 | Tool | Description |
 |------|-------------|
-| `comprehensive_audit` | Cross-domain automated audit |
+| `assess_ai_risks` | 14-category risk assessment |
+| `assess_fairness` | Fairness metrics |
+| `generate_model_card` | Model documentation |
+
+### Multi-Domain
+
+| Tool | Description |
+|------|-------------|
+| `comprehensive_audit` | Cross-domain audit |
 | `risk_assessment` | Likelihood × Impact scoring |
 
 ---
 
-## 📚 Examples
+## Frameworks
 
-### Example 1: Security Code Review
+`OWASP` `MITRE ATT&CK` `NIST CSF` `ISO 27001` `PCI-DSS` `SOC 2` `HIPAA` `GDPR` `COBIT` `CMMC` `FedRAMP`
 
+---
+
+## Examples
+
+**Security audit:**
 ```
-You: Please audit this code for security vulnerabilities:
-     [paste your code]
-
-Claude: I'll use the audit_code tool to analyze this...
-        [Returns detailed findings with CWE references]
-```
-
-### Example 2: Compliance Gap Analysis
-
-```
-You: We're preparing for SOC 2 Type II. Our current state:
-     - We use AWS with MFA enabled
-     - No formal change management process
-     - Weekly backups to S3
-
-Claude: I'll assess your compliance posture...
-        [Returns gap analysis with prioritized recommendations]
+Audit this code for vulnerabilities: [code]
 ```
 
-### Example 3: Fraud Investigation
-
+**Compliance check:**
 ```
-You: Analyze these transaction amounts for anomalies:
-     [list of numbers]
-
-Claude: I'll run Benford's Law analysis...
-        [Returns chi-square statistics and flags suspicious patterns]
+Assess our SOC 2 compliance. Current state: [description]
 ```
 
-### Example 4: Full Audit Engagement
-
+**Fraud detection:**
 ```
-You: Start a security audit for our e-commerce platform
-
-Claude: I'll initialize the audit engagement...
-        [Creates audit session, runs assessments, collects evidence,
-         generates comprehensive report]
+Analyze these amounts with Benford's Law: [numbers]
 ```
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
-mcp-auditor/
-├── src/
-│   ├── index.ts              # MCP server entry point
-│   ├── core/
-│   │   ├── engine.ts         # Audit engine & reporting
-│   │   ├── red-flags.ts      # 100+ red flag patterns
-│   │   ├── types.ts          # TypeScript definitions
-│   │   └── constants.ts      # Configuration constants
-│   ├── domains/
-│   │   ├── code-audit.ts     # Code security analysis
-│   │   ├── security-audit.ts # OWASP, cloud, zero-trust
-│   │   ├── forensic-audit.ts # Benford, fraud, AML
-│   │   ├── compliance-audit.ts
-│   │   ├── operational-audit.ts
-│   │   ├── it-systems-audit.ts
-│   │   └── ai-ml-audit.ts
-│   └── handlers/             # Tool request handlers
-└── dist/                     # Compiled JavaScript
+src/
+├── index.ts           # MCP server
+├── core/              # Engine, types, red flags
+├── domains/           # 7 audit domain modules
+└── handlers/          # Tool handlers
 ```
 
 ---
 
-## 🔗 Related Projects
-
-Explore the **MCP Ecosystem**:
-
-| Project | Description |
-|---------|-------------|
-| [MCP Specification](https://spec.modelcontextprotocol.io) | Official MCP protocol specification |
-| [MCP Servers](https://github.com/modelcontextprotocol/servers) | Official MCP server implementations |
-| [Claude Desktop](https://claude.ai/download) | Claude AI desktop application |
-| [Anthropic Cookbook](https://github.com/anthropics/anthropic-cookbook) | Recipes for building with Claude |
-
-### Complementary MCPs
-
-- **[mcp-filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem)** — File system access for auditing local codebases
-- **[mcp-github](https://github.com/modelcontextprotocol/servers/tree/main/src/github)** — GitHub integration for repository audits
-- **[mcp-postgres](https://github.com/modelcontextprotocol/servers/tree/main/src/postgres)** — Database access for data audits
-
----
-
-## 📖 Audit Frameworks & Standards
-
-MCP Auditor implements guidance from industry-recognized frameworks:
-
-| Framework | Version | Coverage |
-|-----------|---------|----------|
-| [OWASP Top 10](https://owasp.org/Top10/) | 2021 | Full |
-| [MITRE ATT&CK](https://attack.mitre.org/) | v14 | 6 tactics |
-| [NIST CSF](https://www.nist.gov/cyberframework) | 2.0 | Full |
-| [ISO 27001](https://www.iso.org/isoiec-27001-information-security.html) | 2022 | Full |
-| [PCI-DSS](https://www.pcisecuritystandards.org/) | v4.0 | Full |
-| [SOC 2](https://www.aicpa.org/soc2) | 2017 | Full |
-| [COBIT](https://www.isaca.org/resources/cobit) | 5 | Full |
-| [HIPAA](https://www.hhs.gov/hipaa/) | Current | Full |
-| [GDPR](https://gdpr.eu/) | Current | Full |
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+## Contributing
 
 ```bash
-# Clone the repository
-git clone https://github.com/anthropics/mcp-auditor.git
+git clone https://github.com/DeadManOfficial/mcp-auditor.git
 cd mcp-auditor
-
-# Install dependencies
 npm install
-
-# Run in development mode
-npm run dev
-
-# Build for production
 npm run build
-
-# Run self-audit (dogfooding!)
-npx tsx self-audit.ts
 ```
 
----
-
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
-## 🙏 Acknowledgments
+## License
 
-- **[Anthropic](https://anthropic.com)** for Claude and the MCP protocol
-- **[OWASP Foundation](https://owasp.org)** for security guidance
-- **[MITRE Corporation](https://attack.mitre.org)** for ATT&CK framework
-- **[ISACA](https://isaca.org)** for COBIT and audit standards
+MIT
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for the security community**
+<br>
 
-[⬆ Back to Top](#-mcp-auditor)
+<a href="https://github.com/DeadManOfficial">
+  <img src="https://img.shields.io/badge/Built_by-DeadMan-100000?style=flat&logo=github" alt="DeadMan" />
+</a>
+
+<br><br>
+
+<sub>BUILD > BUY</sub>
 
 </div>
